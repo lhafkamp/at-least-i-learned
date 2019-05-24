@@ -1,0 +1,117 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7f9;
+
+  #layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 40px;
+
+    form {
+      .item {
+        width: 500px;
+        background: #fff;
+        border-radius: 8px;
+        margin: 20px 0;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
+
+        input {
+          width: 100%;
+          box-sizing: border-box;
+          padding: 15px 20px;
+          font-size: 1.2rem;
+          color: #edeff5;
+          background: #2f5470;
+          border: none;
+          border-radius: 8px 8px 0 0px;
+          transition: .2s background;
+          outline: none;
+
+          &:focus {
+            color: #2f5470;
+            background: #c0d1de;
+          }
+
+          &::placeholder {
+            color: #718da3;
+          }
+        }
+
+        > div {
+          display: flex;
+          align-items: center;
+          padding: 40px 20px 20px;
+
+          .label {
+            margin-right: 10px;
+            color: #2f5470;
+            border: 1px solid #2f5470;
+            width: max-content;
+            padding: 10px;
+            border-radius: 4px;
+            transition: .2s background;
+          }
+
+          .filled {
+            cursor: pointer;
+            border: none;
+            color: #fff;
+            background: #38b2ac;
+
+            &:hover,
+            &:focus {
+              background: #13928c;
+            }
+          }
+
+          .required {
+            background: #ab5656;
+
+            &:hover,
+            &:focus {
+              background: #913a3a;
+            }
+          }
+        }
+      }
+
+      .controls {
+        margin-top: 20px;
+      }
+
+      .save {
+        position: fixed;
+        bottom: 20px;
+        right: 10px;
+      }
+    }
+  }
+
+  .fat-button {
+    cursor: pointer;
+    color: #fff;
+    font-size: 1rem;
+    margin-right: 10px;
+    padding: 20px;
+    border-radius: 4px;
+    border: none;
+    background: #38b2ac;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
+    transition: .2s background;
+
+    &:disabled {
+      cursor: default;
+      background: #ccc;
+      color: #b1b1b1;
+    }
+
+    &:not(:disabled) {
+      &:hover,
+      &:focus {
+        background: #13928c;
+        outline: none;
+      }
+    }
+  }
+}

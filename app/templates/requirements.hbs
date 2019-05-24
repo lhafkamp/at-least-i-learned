@@ -1,0 +1,24 @@
+<form {{action 'saveItems' on='submit'}}>
+  {{#each model as |req|}}
+    <div class="item">
+      {{input type="text" value=req.name placeholder="Add a name.."}}
+      <div>
+        <div class="label">{{req.type}}</div>
+        <div class="label filled {{if req.required 'required'}}" {{action 'onToggle' req}}>
+          {{#if req.required}}
+            required
+          {{else}}
+            optional
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  {{/each}}
+  <button type="submit" class="save fat-button" disabled={{this.sameItems}}>Save</button>
+</form>
+
+<div class="controls">
+  <button class="fat-button" {{action 'createNewItem' 'room'}}>Add room item</button>
+  <button class="fat-button" {{action 'createNewItem' 'space'}}>Add space item</button>
+  <button class="fat-button" {{action 'createNewItem' 'sky'}}>Add sky item</button>
+</div>
